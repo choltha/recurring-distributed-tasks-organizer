@@ -6,16 +6,20 @@ Appointment = React.createClass({
 		appointment: React.PropTypes.object.isRequired
 		}
 
-	,updateText() {
-		var text = ReactDOM.findDOMNode(this.refs.text).value.trim();
-		console.log(this.props.appointment.text, text);
 
-		Meteor.call(
-			"updateAppointment"
-			, this.props.appointment._id
-			, text
-			);
+	,componentDidMount() {
+		// we need this later but as "itself" -> use "self"
+		$(this.refs.text).editable({
+			success(response, newValue){
+				Meteor.call(
+					"updateAppointment"
+					, this.dataset.id
+					, newValue
+					);
+				}
+			});
 		}
+
 
 	,render(){
 		return(
@@ -23,14 +27,7 @@ Appointment = React.createClass({
 				<span className="text">
 					{moment(this.props.appointment.date).locale("de").format('ll')}
 					: 
-					<input 
-						type = "text"
-						ref = "text"
-						defaultValue = {this.props.appointment.text} />
-					<input
-						type = "button"
-						onClick = {this.updateText}
-						value = "Speichern" />
+					<span ref="text" data-id={this.props.appointment._id} onClick = {this.updateText}>{this.props.appointment.text}</span>
 				</span>
 			</li>
 			)

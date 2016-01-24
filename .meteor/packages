@@ -21,3 +21,5 @@ accounts-ui
 accounts-password
 momentjs:moment
 less
+natestrauser:x-editable-bootstrap
+twbs:bootstrap
