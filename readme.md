@@ -1,4 +1,4 @@
-# GitHub Flavored Markdown preview plugin
+# RDTO - recurring distributed tasks organizer
 
 ## Overview
 
