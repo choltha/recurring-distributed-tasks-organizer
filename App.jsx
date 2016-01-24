@@ -63,7 +63,7 @@ App = React.createClass({
 		return (
 			<div className = "container" id = "main-container">
 				<header>
-					<h1>Abäppeldienst</h1>
+					<h1>RDTO (recurring-distributed-tasks-organizer)</h1>
 					{ /* do i need that ?? 
 					<AccountsUIWrapper />
 						*/}
