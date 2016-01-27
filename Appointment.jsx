@@ -8,12 +8,13 @@ Appointment = React.createClass({
 
 
 	,componentDidMount() {
-		// we need this later but as "itself" -> use "self"
+		// we need "this" later but as itself -> use "self"
+		let self = this;
 		$(this.refs.text).editable({
 			success(response, newValue){
 				Meteor.call(
 					"updateAppointment"
-					, this.dataset.id
+					, self._id
 					, newValue
 					);
 				}
@@ -27,7 +28,7 @@ Appointment = React.createClass({
 				<span className="text">
 					{moment(this.props.appointment.date).locale("de").format('ll')}
 					: 
-					<span ref="text" data-id={this.props.appointment._id} onClick = {this.updateText}>{this.props.appointment.text}</span>
+					<span ref="text" onClick = {this.updateText}>{this.props.appointment.text}</span>
 				</span>
 			</li>
 			)
