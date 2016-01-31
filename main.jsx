@@ -13,7 +13,7 @@ if (Meteor.isClient) {
 	Meteor.subscribe("main-data-subscription");
 
 	Meteor.startup(function (){
-		React.render(<App />, document.getElementById("render-target"))
+		ReactDOM.render(<App />, document.getElementById("render-target"))
 		});
 	}
 
