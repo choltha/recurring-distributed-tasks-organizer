@@ -68,7 +68,7 @@ App = React.createClass({
 
 				</header>
 
-				<ul>
+				<ul className="list-group">
 					{this.renderAppointments()}
 				</ul>
 				<footer>

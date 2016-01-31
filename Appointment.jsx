@@ -24,11 +24,11 @@ Appointment = React.createClass({
 
 	,render(){
 		return(
-			<li>
+			<li className="list-group-item" >
 				<span className="text">
 					{moment(this.props.appointment.date).locale("de").format('ll')}
 					: 
-					<span ref="text" onClick = {this.updateText}>{this.props.appointment.text}</span>
+					<span ref="text">{this.props.appointment.text}</span>
 				</span>
 			</li>
 			)
