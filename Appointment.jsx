@@ -9,12 +9,12 @@ Appointment = React.createClass({
 
 	,componentDidMount() {
 		// we need "this" later but as itself -> use "self"
-		let self = this;
+		var self = this;
 		$(this.refs.text).editable({
 			success(response, newValue){
 				Meteor.call(
 					"updateAppointment"
-					, self._id
+					, self.props.appointment._id
 					, newValue
 					);
 				}
