@@ -20,9 +20,7 @@ App = React.createClass({
 
 	,renderAppointments() {
 		// Get appointments from this.data.appointments
-		console.log(this.data.appointments);
 		return this.data.appointments.map((appointment) => {		
-			console.log(appointment);
 			return <Appointment
 				key={appointment._id}
 				appointment={appointment} />;
